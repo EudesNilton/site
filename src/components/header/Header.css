@@ -1,19 +1,26 @@
 .header{
-    background-color: rgb(95, 112, 106);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 12px 20px;
 }
 
+.img-header{
+    width: 40px;
+}
 .menu-itens{
     display: none;
 }
 
-.menu-itens.active{
-    background-color: burlywood;
+#btn{
+    background: none;
+    border: none;
+}
+
+.menu-itens {
+    background-color: #f0eeee;
     position: absolute;
-    top: 9.8vh;
+    top: 8vh;
     width: 100%;
     right: 0;
     height: 92vh;
@@ -21,4 +28,42 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-}
+    overflow-y: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s;
+    pointer-events: none;
+  }
+  
+  .menu-itens.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: all;
+  }
+  
+  .menu-itens li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .menu-itens.active li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .menu-itens.active li:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  .menu-itens.active li:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  .menu-itens.active li:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  .menu-itens.active li:nth-child(4) {
+    transition-delay: 0.5s;
+  }
+  
