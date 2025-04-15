@@ -1,0 +1,24 @@
+.header{
+    background-color: rgb(95, 112, 106);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.menu-itens{
+    display: none;
+}
+
+.menu-itens.active{
+    background-color: burlywood;
+    position: absolute;
+    top: 9.8vh;
+    width: 100%;
+    right: 0;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
