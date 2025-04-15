@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import img from '../../assets/react.svg'
+import {FiMenu} from 'react-icons/fi'
+import { CgClose } from "react-icons/cg";
+import img from '../../assets/logo.png'
 import './Header.css'
 
 const Header = () => {
@@ -14,14 +16,16 @@ const Header = () => {
     <div className='header'>
         <img className='img-header' src={img} alt="" />
 
-        <button id='btn' onClick={toggleMenu}> Menu </button>
+        <button id='btn' onClick={toggleMenu} aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}>
+        {menuOpen ? <CgClose size={35} /> : <FiMenu size={35} />}
+      </button>
 
             <ul className={`menu-itens ${menuOpen ? 'active' : ''}`}>
-                <li className='itens'>Sobre mim</li>
-                <li className='itens'>Projetos</li>
-                <li className='itens'>Contato</li>
+                <li className='itens'><a href="">Sobre mim</a></li>
+                <li className='itens'><a href="">Projetos</a></li>
+                <li className='itens'><a href="">Contato</a></li>
 
-                <img src={img} alt="" />
+                <img className='img-header' src={img} alt="" />
             </ul>
     </div>
   )
