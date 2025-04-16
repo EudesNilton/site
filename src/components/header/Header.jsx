@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {FiMenu} from 'react-icons/fi'
 import { CgClose } from "react-icons/cg";
 import img from '../../assets/logo.png'
@@ -12,6 +13,10 @@ const Header = () => {
     setMenuOpen(!menuOpen)
   }
 
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
+
   return (
     <div className='header'>
         <img className='img-header' src={img} alt="" />
@@ -21,7 +26,8 @@ const Header = () => {
       </button>
 
             <ul className={`menu-itens ${menuOpen ? 'active' : ''}`}>
-                <li className='itens'><a href="">Sobre mim</a></li>
+                <li className='itens'><Link to='/' onClick={closeMenu}>Inicio</Link></li>
+                <li className='itens'><Link to='/sobre' onClick={closeMenu}>Sobre mim</Link></li>
                 <li className='itens'><a href="">Projetos</a></li>
                 <li className='itens'><a href="">Contato</a></li>
 
