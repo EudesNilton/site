@@ -1,0 +1,15 @@
+.aboutMe{
+    width: 100%;
+    height: 80vh;
+}
+
+.title{
+    padding: 20px;
+    text-align: center;
+}
+
+.about,
+.do{
+    padding: 20px;
+    text-align: center;
+}
